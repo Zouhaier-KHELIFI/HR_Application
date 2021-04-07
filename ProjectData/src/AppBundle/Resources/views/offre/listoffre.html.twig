@@ -1,0 +1,69 @@
+{% extends "@App/HomeLayout.html.twig" %}
+
+  {% block contentbody %}
+      <h1>Liste des offres</h1>
+
+      <table class="table align-items-center table-flush">
+          <thead class="thead-light">
+          <tr>
+
+              <th>Titre </th>
+              <th>Description </th>
+              <th>Poste</th>
+              <th scope="col">Salaire</th>
+              <th scope="col">Description</th>
+              <th scope="col">Promotion</th>
+              <th scope="col">Media_offre</th>
+
+          </tr>
+          </thead>
+          {% for oe in offre %}
+
+          <tbody>
+          <tr>
+
+              <th scope="row">
+
+
+                  {{ oe.getTitre() }}
+              </th>
+
+              <td>
+
+                  {{ oe.getDescription ()}}
+
+              </td>
+
+
+              {{ oe.poste }}
+              </td>
+              <td>
+
+                  {{ oe.getSalaire ()}}
+              </td>
+              <td>
+
+                  {{ oe.getPromotion() }}
+              </td>
+
+              <td>
+                  {{oe.getMediaOffre()|json_encode|raw  }}
+              </td>
+
+              {% endfor %}
+
+
+
+
+
+          </tr>
+
+
+
+
+          </tbody>
+      </table>
+
+
+
+  {% endblock %}

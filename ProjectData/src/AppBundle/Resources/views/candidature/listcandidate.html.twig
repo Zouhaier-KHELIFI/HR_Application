@@ -1,0 +1,58 @@
+{% extends "@App/index.html.twig" %}
+                    {% block contentbody %}
+    <h1>Liste des candidatures</h1>
+
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Id</th>
+
+            <th scope="col">qualification</th>
+            <th scope="col">motivation</th>
+            <th>EtatCandidature</th>
+        </tr>
+        </thead>
+        {% for personne in Utilisateur %}
+
+        <tbody>
+        <tr>
+
+            <td>
+                {{  personne.id }}
+            </td>
+
+
+
+            <td>
+                {{  personne.qualification }}
+            </td>
+
+            <td>
+
+                {{ personne.motivation }}
+
+            </td>
+
+            <td>
+
+                {{ personne.etatCandidature }}
+
+            </td>
+
+            {% endfor %}
+
+
+
+
+
+        </tr>
+
+
+
+
+        </tbody>
+    </table>
+
+
+
+{% endblock %}
